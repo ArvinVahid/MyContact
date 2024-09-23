@@ -6,15 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyContact.Business
+namespace MyContact.Business.Services
 {
-    public class ContactBL : BaseBL<Contact, IContactRepo>
+    public class NumberService : BaseService<MyNumber, INumberRepo>
     {
-        public ContactBL(IContactRepo contactRepo) : base(contactRepo)
+        public NumberService(INumberRepo numberRepo) : base(numberRepo)
         {
-            
+
         }
-
-
     }
 }

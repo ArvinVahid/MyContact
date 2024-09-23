@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyContact.Business
+namespace MyContact.Business.Services
 {
-    public class BaseBL<TEntity, TRepo>
+    public class BaseService<TEntity, TRepo>
         where TEntity : class
         where TRepo : IBaseRepo<TEntity>
     {
         protected readonly TRepo _repo;
-        public BaseBL(TRepo repo)
+        public BaseService(TRepo repo)
         {
             _repo = repo;
         }
@@ -24,7 +24,8 @@ namespace MyContact.Business
 
         public List<TEntity> GetAll()
         {
-            return _repo.GetAll();
+            List<TEntity> e = new List<TEntity>();
+            return e;
         }
 
         public void Insert(TEntity entity)

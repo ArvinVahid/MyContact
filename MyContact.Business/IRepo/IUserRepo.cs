@@ -9,6 +9,8 @@ namespace MyContact.Business.IRepo
 {
     public interface IUserRepo : IBaseRepo<User>
     {
-        void GetItem(int userId);
+        User GetItem(int userId);
+        bool IsUserExists(User user);
+        User GetUserById(int userId);
     }
 }

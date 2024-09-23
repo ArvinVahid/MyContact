@@ -2,12 +2,10 @@
 
 namespace MyContact.Business.Entities
 {
-    public class Number
+    public class MyNumber : BaseEntity
     {
-        public int UserId { get; set; }
+        public int NumberId { get; set; }
         public int ContactId { get; set; }
-
-        [Required]
         public string PhoneNumber { get; set; }
     }
 }

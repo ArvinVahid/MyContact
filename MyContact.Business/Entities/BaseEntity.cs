@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyContact.Business.Entities
 {
-    public abstract class BaseEntity<TEntity>
-        where TEntity : class
+    public abstract class BaseEntity
     {
-        
+        public DateTime CreatedOn { get; set; }
+        public DateTime ModifiedOn { get; set; }
     }
 }

@@ -2,18 +2,13 @@
 
 namespace MyContact.Business.Entities
 {
-    public class Contact
+    public class Contact : BaseEntity
     {
-        [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
-
-        [Required]
         public string FirstName { get; set; }
-
-        [Required]
         public string LastName { get; set; }
-        public List<Number> Numbers { get; set; } = new List<Number>();
+        public List<MyNumber> Numbers { get; set; } = new List<MyNumber>();
         public User User { get; set; }
     }
 }

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace MyContact.Data.Repo
 {
-    public class BaseRepo<TEntity> : IBaseRepo<TEntity>
+    public abstract class BaseRepo<TEntity> : IBaseRepo<TEntity>
         where TEntity : class
     {
         private readonly DataContext _context;
-        public BaseRepo()
+        public BaseRepo(DataContext context)
         {
-            _context = new DataContext();
+            _context = context;
         }
 
         protected IQueryable<TEntity> Query => _context.Set<TEntity>();
@@ -40,10 +40,14 @@ namespace MyContact.Data.Repo
         {
             return Query.AsNoTracking().ToList();
         }
-
+        public List<TEntity> GetAll(Func<TEntity, bool> predicate) { 
+            return Query.Where(predicate).ToList();
+        }
         public void Save()
         {
             _context.SaveChanges();
         }
+
+        
     }
 }

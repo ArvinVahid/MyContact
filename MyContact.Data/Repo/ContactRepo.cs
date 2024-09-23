@@ -11,9 +11,23 @@ namespace MyContact.Data.Repo
 {
     public class ContactRepo : BaseRepo<Contact>, IContactRepo
     {
+        public ContactRepo(DataContext context) : base(context)
+        {
+        }
+
+        public Contact GetContactById(int contactId)
+        {
+            return Query.FirstOrDefault(c => c.Id == contactId);
+        }
+
         public void GetItem(int ContactId)
         {
             Query.AsNoTracking().First(c => c.Id == ContactId);
+        }
+
+        public bool IsContactExists(Contact contact)
+        {
+            return Query.AsNoTracking().Any(c => c.Id == contact.Id);
         }
     }
 }

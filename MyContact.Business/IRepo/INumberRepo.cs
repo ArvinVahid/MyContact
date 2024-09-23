@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyContact.Business.IRepo
 {
-    public interface INumberRepo : IBaseRepo<Number>
+    public interface INumberRepo : IBaseRepo<MyNumber>
     {
+        bool IsNumberExists(string mobileNumber);
     }
 }

@@ -12,6 +12,6 @@ namespace MyContact.Business.IRepo
         void Insert(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-        List<TEntity> GetAll();
+        List<TEntity> GetAll(Func<TEntity, bool> predicate);
     }
 }

@@ -10,5 +10,7 @@ namespace MyContact.Business.IRepo
     public interface IContactRepo : IBaseRepo<Contact>
     {
         void GetItem(int ContactId);
+        bool IsContactExists(Contact contact);
+        Contact GetContactById(int contactId);
     }
 }
